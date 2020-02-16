@@ -1,56 +1,51 @@
 import React from 'react'
-import Link from 'next/link'
+import { makeStyles } from '@material-ui/core/styles'
+import { AppBar, Toolbar, Typography, Divider, Button } from '@material-ui/core'
 
-const links = [
-  { href: 'https://zeit.co/now', label: 'ZEIT' },
-  { href: 'https://github.com/zeit/next.js', label: 'GitHub' },
-].map(link => ({
-  ...link,
-  key: `nav-link-${link.href}-${link.label}`,
+import config from '../config'
+import Container from '../components/container'
+
+const useStyles = makeStyles(theme => ({
+  root: {
+    flexGrow: 1
+  },
+  appBar: {
+    paddingTop: '35px',
+    paddingBottom: '30px',
+    marginBottom: '30px'
+  },
+  logo: {
+    width: '100%',
+    maxWidth: '290px'
+  },
+  divider: {
+    marginLeft: '40px',
+    marginRight: '20px'
+  },
+  title: {
+    flexGrow: 1
+  }
 }))
 
-const Nav = () => (
-  <nav>
-    <ul>
-      <li>
-        <Link href="/">
-          <a>Home</a>
-        </Link>
-      </li>
-      {links.map(({ key, href, label }) => (
-        <li key={key}>
-          <a href={href}>{label}</a>
-        </li>
-      ))}
-    </ul>
+const ButtonAppBar = props => {
+  const classes = useStyles()
 
-    <style jsx>{`
-      :global(body) {
-        margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir,
-          Helvetica, sans-serif;
-      }
-      nav {
-        text-align: center;
-      }
-      ul {
-        display: flex;
-        justify-content: space-between;
-      }
-      nav > ul {
-        padding: 4px 16px;
-      }
-      li {
-        display: flex;
-        padding: 6px 8px;
-      }
-      a {
-        color: #067df7;
-        text-decoration: none;
-        font-size: 13px;
-      }
-    `}</style>
-  </nav>
-)
+  return (
+    <div className={classes.root}>
+      <AppBar position='static' color='secondary' className={classes.appBar}>
+        <Container maxWidth='md'>
+          <Toolbar>
+            <img src='./img/VT-Logo-02-Horisontal-RBG.svg' alt='Logo' className={classes.logo} />
+            <Divider orientation='vertical' flexItem className={classes.divider} />
+            <Typography variant='h6' className={classes.title}>
+              {props.title || config.APP_NAME}
+            </Typography>
+            <Button color='inherit'>Login</Button>
+          </Toolbar>
+        </Container>
+      </AppBar>
+    </div>
+  )
+}
 
-export default Nav
+export default ButtonAppBar

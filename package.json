@@ -1,15 +1,27 @@
 {
   "name": "minelev-web",
-  "version": "0.1.0",
-  "private": true,
+  "description": "Next web frontend for MinElev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vtfk/minelev-web.git"
+  },
+  "license": "MIT",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next",
     "build": "next build",
     "start": "next start"
   },
   "dependencies": {
-    "next": "9.2.1",
-    "react": "16.12.0",
-    "react-dom": "16.12.0"
+    "@material-ui/core": "^4.9.3",
+    "@material-ui/icons": "^4.9.1",
+    "next": "^9.1.6",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "styled-components": "^5.0.1",
+    "swr": "^0.1.17"
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.10.7",
+    "standard": "^14.3.1"
   }
 }
