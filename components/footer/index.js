@@ -2,7 +2,8 @@ import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import { Grid, Link } from '@material-ui/core'
 
-import Container from '../components/container'
+import Container from '../styles/Container'
+import { COMPANY } from '../../config'
 
 const useStyles = makeStyles(theme => ({
   footer: {
@@ -43,10 +44,10 @@ const Footer = () => {
       <Container>
         <Grid container spacing={2}>
           <Grid item>
-            <img src='./img/VT-Logo-02-Horisontal-HVIT.svg' alt='Vestfold og Telemark fylkeskommune' className={classes.logo} />
+            <img src='./img/VT-Logo-02-Horisontal-HVIT.svg' alt={COMPANY.NAME} className={classes.logo} />
           </Grid>
           <Grid item className={classes.links}>
-            <Link href='https://vtfk.no/personvern/personvernerklaring/' rel='noopener' target='_blank' className={classes.link}>Personvern og informasjonskapsler</Link>
+            <Link href={COMPANY.PRIVACY_URL} rel='noopener' target='_blank' className={classes.link}>Personvern og informasjonskapsler</Link>
           </Grid>
         </Grid>
       </Container>

@@ -6,10 +6,7 @@ import {
 
 import { Alert, AlertTitle } from '@material-ui/lab'
 
-import Head from '../components/head'
-import Nav from '../components/nav'
-import Footer from '../components/footer'
-import Container from '../components/container'
+import Page from '../components/Page'
 
 function createData (name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein }
@@ -25,63 +22,55 @@ const rows = [
 
 const Home = () => {
   return (
-    <div>
-      <Head />
-      <Nav />
-
-      <Container maxWidth='xl'>
-        <Breadcrumbs aria-label='breadcrumb'>
-          <Link color='inherit' href='/'>
+    <Page>
+      <Breadcrumbs aria-label='breadcrumb'>
+        <Link color='inherit' href='/'>
             Forsiden
-          </Link>
-          <Link color='inherit' href='/'>
+        </Link>
+        <Link color='inherit' href='/'>
             Elev Elevsen
-          </Link>
-          <Typography color='textPrimary'>Nytt varsel</Typography>
-        </Breadcrumbs>
+        </Link>
+        <Typography color='textPrimary'>Nytt varsel</Typography>
+      </Breadcrumbs>
 
-        <h1>Nytt varselbrev i atferd</h1>
+      <h1>Nytt varselbrev i atferd</h1>
 
-        <div style={{ maxWidth: '790px', marginTop: '20px', marginBottom: '40px' }}>
-          <Alert severity='info' onClose={() => {}}>
-            <AlertTitle>Hei på deg!</AlertTitle>
+      <div style={{ maxWidth: '790px', marginTop: '20px', marginBottom: '40px' }}>
+        <Alert severity='info' onClose={() => {}}>
+          <AlertTitle>Hei på deg!</AlertTitle>
             Dette er et eksempel på hvordan nytt brukergrensesnitt kan se ut i fylkeskommunens nye drakt...
-          </Alert>
-        </div>
+        </Alert>
+      </div>
 
-        <Paper>
-          <TableContainer component={Paper}>
-            <Table aria-label='simple table'>
-              <TableHead>
-                <TableRow>
-                  <TableCell>Dessert (100g serving)</TableCell>
-                  <TableCell align='right'>Calories</TableCell>
-                  <TableCell align='right'>Fat&nbsp;(g)</TableCell>
-                  <TableCell align='right'>Carbs&nbsp;(g)</TableCell>
-                  <TableCell align='right'>Protein&nbsp;(g)</TableCell>
+      <Paper>
+        <TableContainer component={Paper}>
+          <Table aria-label='simple table'>
+            <TableHead>
+              <TableRow>
+                <TableCell>Dessert (100g serving)</TableCell>
+                <TableCell align='right'>Calories</TableCell>
+                <TableCell align='right'>Fat&nbsp;(g)</TableCell>
+                <TableCell align='right'>Carbs&nbsp;(g)</TableCell>
+                <TableCell align='right'>Protein&nbsp;(g)</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {rows.map(row => (
+                <TableRow key={row.name}>
+                  <TableCell component='th' scope='row'>
+                    {row.name}
+                  </TableCell>
+                  <TableCell align='right'>{row.calories}</TableCell>
+                  <TableCell align='right'>{row.fat}</TableCell>
+                  <TableCell align='right'>{row.carbs}</TableCell>
+                  <TableCell align='right'>{row.protein}</TableCell>
                 </TableRow>
-              </TableHead>
-              <TableBody>
-                {rows.map(row => (
-                  <TableRow key={row.name}>
-                    <TableCell component='th' scope='row'>
-                      {row.name}
-                    </TableCell>
-                    <TableCell align='right'>{row.calories}</TableCell>
-                    <TableCell align='right'>{row.fat}</TableCell>
-                    <TableCell align='right'>{row.carbs}</TableCell>
-                    <TableCell align='right'>{row.protein}</TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </TableContainer>
-        </Paper>
-      </Container>
-
-      <Footer />
-
-    </div>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </Paper>
+    </Page>
   )
 }
 

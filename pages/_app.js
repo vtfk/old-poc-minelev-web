@@ -4,7 +4,7 @@ import { ThemeProvider as StyledThemeProvider } from 'styled-components'
 import { ThemeProvider as MaterialThemeProvider } from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
 
-import theme from '../components/theme'
+import theme from '../components/styles/theme'
 
 export default class App extends NextApp {
   componentDidMount () {

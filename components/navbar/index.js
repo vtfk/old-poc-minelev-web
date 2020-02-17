@@ -2,9 +2,10 @@ import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import { AppBar, Toolbar, Typography, Divider } from '@material-ui/core'
 
-import config from '../config'
-import Container from '../components/container'
-import NavButton from '../components/NavButton'
+import Container from '../styles/Container'
+import NavButton from './NavButton'
+
+import config from '../../config'
 
 const useStyles = makeStyles(theme => ({
   appBar: {
@@ -46,10 +47,10 @@ const ButtonAppBar = props => {
     <AppBar position='static' color='secondary' className={classes.appBar}>
       <Container maxWidth='md'>
         <Toolbar className={classes.toolbar}>
-          <img src='./img/VT-Logo-02-Horisontal-RBG.svg' alt='Logo' className={classes.logo} />
+          <img src='./img/VT-Logo-02-Horisontal-RBG.svg' alt={config.COMPANY.NAME} className={classes.logo} />
           <Divider orientation='vertical' flexItem className={classes.divider} />
           <Typography className={classes.title}>
-            {props.title || config.APP_NAME}
+            {props.title || config.APP.NAME}
           </Typography>
 
           <span className={classes.buttonRow}>
