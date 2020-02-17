@@ -30,7 +30,7 @@ const Head = props => (
 
     <link rel='icon' href='/favicon.ico' />
 
-    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap' />
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700|Nunito:400,600,700&display=swap' />
   </NextHead>
 )
 

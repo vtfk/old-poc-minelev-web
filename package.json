@@ -14,6 +14,8 @@
   "dependencies": {
     "@material-ui/core": "^4.9.3",
     "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.43",
+    "classnames": "^2.2.6",
     "next": "^9.1.6",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",

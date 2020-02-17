@@ -1,18 +1,15 @@
 import React from 'react'
-import { Paper } from '@material-ui/core'
+import {
+  Paper, Breadcrumbs, Link, Typography, Table,
+  TableBody, TableCell, TableContainer, TableHead, TableRow
+} from '@material-ui/core'
 
-import Table from '@material-ui/core/Table'
-import TableBody from '@material-ui/core/TableBody'
-import TableCell from '@material-ui/core/TableCell'
-import TableContainer from '@material-ui/core/TableContainer'
-import TableHead from '@material-ui/core/TableHead'
-import TableRow from '@material-ui/core/TableRow'
-
-import Container from '../components/container'
+import { Alert, AlertTitle } from '@material-ui/lab'
 
 import Head from '../components/head'
 import Nav from '../components/nav'
 import Footer from '../components/footer'
+import Container from '../components/container'
 
 function createData (name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein }
@@ -33,7 +30,24 @@ const Home = () => {
       <Nav />
 
       <Container maxWidth='xl'>
-        <h1>Hello world!</h1>
+        <Breadcrumbs aria-label='breadcrumb'>
+          <Link color='inherit' href='/'>
+            Forsiden
+          </Link>
+          <Link color='inherit' href='/'>
+            Elev Elevsen
+          </Link>
+          <Typography color='textPrimary'>Nytt varsel</Typography>
+        </Breadcrumbs>
+
+        <h1>Nytt varselbrev i atferd</h1>
+
+        <div style={{ maxWidth: '790px', marginTop: '20px', marginBottom: '40px' }}>
+          <Alert severity='info' onClose={() => {}}>
+            <AlertTitle>Hei på deg!</AlertTitle>
+            Dette er et eksempel på hvordan nytt brukergrensesnitt kan se ut i fylkeskommunens nye drakt...
+          </Alert>
+        </div>
 
         <Paper>
           <TableContainer component={Paper}>
