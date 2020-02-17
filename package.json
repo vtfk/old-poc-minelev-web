@@ -1,6 +1,6 @@
 {
   "name": "minelev-web",
-  "description": "Next web frontend for MinElev",
+  "description": "Nextjs web frontend for MinElev",
   "repository": {
     "type": "git",
     "url": "https://github.com/vtfk/minelev-web.git"
